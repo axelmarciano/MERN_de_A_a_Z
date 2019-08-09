@@ -7,10 +7,10 @@ const burl = "http://localhost:8800";
 export default {
   login: function(email, password) {
     return axios.post(
-      burl + "/user/login",
+      `${burl}/user/login`,
       {
-        email: email,
-        password: password
+        email,
+        password
       },
       {
         headers: headers
@@ -18,7 +18,7 @@ export default {
     );
   },
   signup: function(send) {
-    return axios.post(burl + "/user/signup", send, { headers: headers });
+    return axios.post(`${burl}/user/signup`, send, { headers: headers });
   },
 
   isAuth: function() {
